@@ -1,0 +1,11 @@
+# Default: safe text handling
+* text eol=lf
+
+# Explicit binary files (VERY important)
+*.pdf binary
+*.dll binary
+*.exe binary
+*.png binary
+*.jpg binary
+*.zip binary
+*.dwg binary
