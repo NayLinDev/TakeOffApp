@@ -23,3 +23,11 @@ In release builds, `Qt6Core.dll, Qt6Gui.dll, Qt6Widgets.dll, Qt6Svg.dll, imagefo
 In CMakePresets.json details are given.
 
 `vcpkg.json` is used in manifest mode. It is disable by changing its name to `vcpkg_avoid.json`.
+
+# Using qpdf
+
+`qpdf` utility is used to spit out the low level PDF commands as debug tool during development.
+
+## Printing PDF command in text file
+
+`qpdf --qdf drawing.pdf drawing.txt` to print the PDF commands in a text file.
