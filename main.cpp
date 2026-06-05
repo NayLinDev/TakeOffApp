@@ -6,11 +6,11 @@
 
 #include "testfunctions/test_pdfium.h"
 #include "testfunctions/test_podofo.h"
-// 重定向qdebug的打印
+
 void log_out_put(QtMsgType type, const QMessageLogContext &context, const QString &msg);
 
 /**
- * @brief 重定向qdebug的打印
+ * @brief redefine qdebug
  * @param type
  * @param context
  * @param msg
@@ -49,17 +49,17 @@ void log_out_put(QtMsgType type, const QMessageLogContext &context, const QStrin
 
 int main(int argc, char *argv[])
 {
-    // 以下是针对高分屏的设置，有高分屏需求都需要按照下面进行设置
     SARibbonBar::initHighDpi();
     test_podofo();
     test_pdfium();
     QApplication a(argc, argv);
     qInstallMessageHandler(log_out_put);
 #ifdef SA_RIBBON_BAR_NO_EXPORT
-    Q_INIT_RESOURCE(SARibbonResource); // 针对静态库的资源加载
+    Q_INIT_RESOURCE(SARibbonResource);
 #endif
     QFont f = a.font();
-    f.setFamily(u8"微软雅黑");
+    f.setFamily("Aerial");
+    f.setPixelSize(14);
     a.setFont(f);
     QElapsedTimer cost;
 

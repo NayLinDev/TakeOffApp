@@ -40,7 +40,6 @@ class MainWindow;
 */
 
 /**
- * \if ENGLISH
  * @brief Main window class demonstrating SARibbon library usage
  * @details This class provides a comprehensive example of how to use the SARibbon library,
  *          including creating ribbon bars, panels, categories, and various ribbon controls.
@@ -62,30 +61,8 @@ class MainWindow;
  * MainWindow* window = new MainWindow();
  * window->show();
  * @endcode
- * \endif
- *
- * \if CHINESE
- * @brief 主窗口类，演示SARibbon库的使用方法
- * @details 该类提供了如何使用SARibbon库的综合示例，包括创建Ribbon栏、面板、分类和各种Ribbon控件。
- *          它作为开发者将SARibbon集成到Qt应用程序中的学习资源。
- *
- *          演示的主要功能：
- *          - Ribbon栏的创建和配置
- *          - 分类和面板管理
- *          - 上下文分类用于上下文相关UI
- *          - 快速访问栏自定义
- *          - 按钮组控件
- *          - 应用程序按钮和菜单
- *          - 动作管理器用于自定义
- *          - 主题和样式自定义
- *
- * @code
- * // 使用示例：
- * MainWindow* window = new MainWindow();
- * window->show();
- * @endcode
- * \endif
  */
+
 class MainWindow : public SARibbonMainWindow
 {
     Q_OBJECT

@@ -52,17 +52,9 @@
 #include <QDialogButtonBox>
 
 /**
- * \if ENGLISH
  * @brief Macro for starting performance timing measurement
  * @details This macro creates a QElapsedTimer and starts it for measuring code execution time.
  *          It's useful for profiling and debugging performance issues.
- * \endif
- *
- * \if CHINESE
- * @brief 用于开始性能计时的宏
- * @details 此宏创建一个QElapsedTimer并启动它，用于测量代码执行时间。
- *          对于性能分析和调试非常有用。
- * \endif
  */
 #define PRINT_COST_START()    \
     QElapsedTimer __TMP_COST; \
@@ -70,19 +62,10 @@
     int __TMP_LASTTIMES = 0
 
 /**
- * \if ENGLISH
  * @brief Macro for printing elapsed time cost
  * @param STR Description string for the timing point
  * @details This macro prints the elapsed time since the last timing point and the total elapsed time.
  *          It outputs to both the debug console and the UI text browser.
- * \endif
- *
- * \if CHINESE
- * @brief 用于打印已用时间的宏
- * @param STR 计时点的描述字符串
- * @details 此宏打印自上一个计时点以来的已用时间和总已用时间。
- *          它同时输出到调试控制台和UI文本浏览器。
- * \endif
  */
 #define PRINT_COST(STR)                                                                                               \
     do                                                                                                                \
@@ -94,15 +77,8 @@
     } while (0)
 
 /**
- * \if ENGLISH
  * @brief Constructor, initializes the main window and Ribbon interface
  * @param parent Parent window pointer
- * \endif
- *
- * \if CHINESE
- * @brief 构造函数，初始化主窗口和Ribbon界面
- * @param parent 父窗口指针
- * \endif
  */
 MainWindow::MainWindow(QWidget *parent) : SARibbonMainWindow(parent) //, ui(new Ui::MainWindow) // Ui no longer used
 {
@@ -112,15 +88,8 @@ MainWindow::MainWindow(QWidget *parent) : SARibbonMainWindow(parent) //, ui(new 
 }
 
 /**
- * \if ENGLISH
  * @brief Destructor
  * @details Cleans up the UI resources
- * \endif
- *
- * \if CHINESE
- * @brief 析构函数
- * @details 清理UI资源
- * \endif
  */
 MainWindow::~MainWindow()
 {
@@ -128,7 +97,6 @@ MainWindow::~MainWindow()
 }
 
 /**
- * \if ENGLISH
  * @brief Initialize the user interface
  * @details This function sets up the main window's Ribbon interface, including:
  *          - Creating the Ribbon bar with categories and panels
@@ -136,17 +104,6 @@ MainWindow::~MainWindow()
  *          - Creating context categories
  *          - Setting up the quick access bar and right button group
  *          - Connecting signals and slots for various UI controls
- * \endif
- *
- * \if CHINESE
- * @brief 初始化用户界面
- * @details 此函数设置主窗口的Ribbon界面，包括：
- *          - 创建带有分类和面板的Ribbon栏
- *          - 设置应用程序按钮
- *          - 创建上下文分类
- *          - 设置快速访问栏和右侧按钮组
- *          - 连接各种UI控件的信号和槽
- * \endif
  */
 void MainWindow::initUI()
 {
@@ -284,22 +241,12 @@ void MainWindow::initUI()
 }
 
 /**
- * \if ENGLISH
  * @brief Create the Application Button for the Ribbon interface
  * @details The Application Button is located in the upper left corner of the Ribbon interface.
  *          It typically displays file-related operations such as New, Open, Save, etc.
  *          By default, SARibbonBar creates a SARibbonApplicationButton. Users can create
  *          their own application button and set it via SARibbonBar::setApplicationButton().
  *          Passing a nullptr will remove the application button.
- * \endif
- *
- * \if CHINESE
- * @brief 创建Ribbon界面的应用程序按钮
- * @details 应用程序按钮位于Ribbon界面的左上角，通常用于显示文件相关操作，如新建、打开、保存等。
- *          默认情况下，SARibbonBar会创建一个SARibbonApplicationButton。用户可以创建
- *          自己的应用程序按钮，并通过SARibbonBar::setApplicationButton()设置。
- *          传入nullptr将移除应用程序按钮。
- * \endif
  */
 void MainWindow::createRibbonApplicationButton()
 {
@@ -341,18 +288,10 @@ void MainWindow::createRibbonApplicationButton()
 }
 
 /**
- * \if ENGLISH
  * @brief Show or hide the Context Category
  * @param visible Whether to show the context category
  * @details Context Category is a special tab that is usually displayed for specific context environments,
  *          such as showing related operations when an object is selected.
- * \endif
- *
- * \if CHINESE
- * @brief 显示或隐藏上下文分类
- * @param visible 是否显示上下文分类
- * @details 上下文分类是一种特殊的标签页，通常用于特定上下文环境，比如当选择某个对象时才显示相关操作。
- * \endif
  */
 void MainWindow::onShowContextCategory(bool visible)
 {
@@ -371,18 +310,10 @@ void MainWindow::onShowContextCategory(bool visible)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle Ribbon style button click
  * @param styleId The style ID corresponding to the clicked button
  * @details SARibbon supports multiple styles, including combinations of loose/compact and two-row/three-row modes.
  *          Users can switch between styles as needed.
- * \endif
- *
- * \if CHINESE
- * @brief 处理Ribbon样式按钮点击
- * @param styleId 点击按钮对应的样式ID
- * @details SARibbon支持多种样式，包括宽松/紧凑和两行/三行模式的组合，用户可以根据需要切换。
- * \endif
  */
 void MainWindow::onStyleClicked(int styleId)
 {
@@ -425,17 +356,9 @@ void MainWindow::onStyleClicked(int styleId)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle customize action trigger
  * @details This demonstrates how to use SARibbonCustomizeWidget to implement interface customization.
  *          The customize widget allows users to modify the ribbon layout.
- * \endif
- *
- * \if CHINESE
- * @brief 处理自定义动作触发
- * @details 这里演示了如何使用SARibbonCustomizeWidget来实现界面的自定义。
- *          自定义窗口允许用户修改Ribbon布局。
- * \endif
  */
 void MainWindow::onActionCustomizeTriggered()
 {
@@ -452,17 +375,9 @@ void MainWindow::onActionCustomizeTriggered()
 }
 
 /**
- * \if ENGLISH
  * @brief Handle customize and save action trigger
  * @details This demonstrates how to use SARibbonCustomizeDialog to implement interface customization,
  *          and also demonstrates how to save the customized interface as an XML file.
- * \endif
- *
- * \if CHINESE
- * @brief 处理自定义并保存动作触发
- * @details 这里演示了如何使用SARibbonCustomizeDialog来实现界面的自定义，
- *          同时演示了如何把自定义的界面保存为XML文件。
- * \endif
  */
 void MainWindow::onActionCustomizeAndSaveTriggered()
 {
@@ -526,17 +441,9 @@ void MainWindow::onActionCustomizeAndSaveTriggered()
 }
 
 /**
- * \if ENGLISH
  * @brief Handle customize and save with apply action trigger
  * @details This demonstrates how to embed SARibbonCustomizeWidget into a QDialog to implement interface customization.
  *          This approach allows better integration with your own software settings page.
- * \endif
- *
- * \if CHINESE
- * @brief 处理自定义并保存（带应用）动作触发
- * @details 这里演示了如何将SARibbonCustomizeWidget嵌入到QDialog中实现界面的自定义，
- *          这样可以让SARibbonCustomizeWidget更好地和自己的软件设置页面结合。
- * \endif
  */
 void MainWindow::onActionCustomizeAndSaveWithApplyTriggered()
 {
@@ -629,15 +536,8 @@ void MainWindow::onActionCustomizeAndSaveWithApplyTriggered()
 }
 
 /**
- * \if ENGLISH
  * @brief Handle help action trigger
  * @details Display SARibbon library version information and author contact information.
- * \endif
- *
- * \if CHINESE
- * @brief 处理帮助动作触发
- * @details 显示SARibbon库的版本信息和作者联系方式。
- * \endif
  */
 void MainWindow::onActionHelpTriggered()
 {
@@ -652,17 +552,9 @@ void MainWindow::onActionHelpTriggered()
 }
 
 /**
- * \if ENGLISH
  * @brief Handle remove application button action trigger
  * @param removeButton Whether to remove the application button
  * @details Demonstrate how to dynamically add or remove the Application Button.
- * \endif
- *
- * \if CHINESE
- * @brief 处理移除应用程序按钮动作触发
- * @param removeButton 是否移除应用程序按钮
- * @details 演示如何动态添加或移除ApplicationButton。
- * \endif
  */
 void MainWindow::onActionRemoveAppBtnTriggered(bool removeButton)
 {
@@ -680,15 +572,8 @@ void MainWindow::onActionRemoveAppBtnTriggered(bool removeButton)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle use QSS action trigger
  * @details Demonstrate how to customize Ribbon interface styles through QSS files.
- * \endif
- *
- * \if CHINESE
- * @brief 处理使用QSS动作触发
- * @details 演示如何通过QSS文件自定义Ribbon界面样式。
- * \endif
  */
 void MainWindow::onActionUseQssTriggered()
 {
@@ -712,15 +597,8 @@ void MainWindow::onActionUseQssTriggered()
 }
 
 /**
- * \if ENGLISH
  * @brief Handle load customize XML file action trigger
  * @details Load previously saved custom configuration from XML file.
- * \endif
- *
- * \if CHINESE
- * @brief 处理加载自定义XML文件动作触发
- * @details 从XML文件加载之前保存的自定义配置。
- * \endif
  */
 void MainWindow::onActionLoadCustomizeXmlFileTriggered()
 {
@@ -743,17 +621,9 @@ void MainWindow::onActionLoadCustomizeXmlFileTriggered()
 }
 
 /**
- * \if ENGLISH
  * @brief Handle window flag normal button action trigger
  * @param showButtons Whether to show window buttons
  * @details Control the display of window minimize, maximize, and close buttons.
- * \endif
- *
- * \if CHINESE
- * @brief 处理窗口标志普通按钮动作触发
- * @param showButtons 是否显示窗口按钮
- * @details 控制窗口的最小化、最大化和关闭按钮的显示。
- * \endif
  */
 void MainWindow::onActionWindowFlagNormalButtonTriggered(bool showButtons)
 {
@@ -764,17 +634,9 @@ void MainWindow::onActionWindowFlagNormalButtonTriggered(bool showButtons)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle font combobox current font changed
  * @param newFont The newly selected font
  * @details When the user selects a new font in the font combobox, update the font of the Ribbon interface.
- * \endif
- *
- * \if CHINESE
- * @brief 处理字体组合框当前字体改变
- * @param newFont 新选择的字体
- * @details 当用户在字体组合框中选择新字体时，更新Ribbon界面的字体。
- * \endif
  */
 void MainWindow::onFontComWidgetCurrentFontChanged(const QFont &newFont)
 {
@@ -784,15 +646,8 @@ void MainWindow::onFontComWidgetCurrentFontChanged(const QFont &newFont)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle font larger action trigger
  * @details Increase the font size of the Ribbon interface.
- * \endif
- *
- * \if CHINESE
- * @brief 处理增大字体动作触发
- * @details 增大Ribbon界面字体大小。
- * \endif
  */
 void MainWindow::onActionFontLargerTriggered()
 {
@@ -805,15 +660,8 @@ void MainWindow::onActionFontLargerTriggered()
 }
 
 /**
- * \if ENGLISH
  * @brief Handle font smaller action trigger
  * @details Decrease the font size of the Ribbon interface.
- * \endif
- *
- * \if CHINESE
- * @brief 处理减小字体动作触发
- * @details 减小Ribbon界面字体大小。
- * \endif
  */
 void MainWindow::onActionFontSmallerTriggered()
 {
@@ -826,17 +674,9 @@ void MainWindow::onActionFontSmallerTriggered()
 }
 
 /**
- * \if ENGLISH
  * @brief Handle word wrap action trigger
  * @param enableWordWrap Whether to enable word wrap
  * @details Control whether text on Ribbon buttons is displayed with line breaks.
- * \endif
- *
- * \if CHINESE
- * @brief 处理文字换行动作触发
- * @param enableWordWrap 是否启用文字换行
- * @details 控制Ribbon按钮上的文字是否换行显示。
- * \endif
  */
 void MainWindow::onActionWordWrapTriggered(bool enableWordWrap)
 {
@@ -848,17 +688,9 @@ void MainWindow::onActionWordWrapTriggered(bool enableWordWrap)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle button group action trigger
  * @param triggeredAction The triggered action
  * @details Handle button click events in the button group, used to set title alignment.
- * \endif
- *
- * \if CHINESE
- * @brief 处理按钮组动作触发
- * @param triggeredAction 触发的动作
- * @details 处理按钮组中按钮的点击事件，用于设置标题对齐方式。
- * \endif
  */
 void MainWindow::onButtonGroupActionTriggered(QAction *triggeredAction)
 {
@@ -875,19 +707,10 @@ void MainWindow::onButtonGroupActionTriggered(QAction *triggeredAction)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle color button color clicked
  * @param selectedColor The selected color
  * @param clicked Whether the button was clicked
  * @details Handle color selection events for color buttons.
- * \endif
- *
- * \if CHINESE
- * @brief 处理颜色按钮颜色点击
- * @param selectedColor 选择的颜色
- * @param clicked 是否点击
- * @details 处理颜色按钮的颜色选择事件。
- * \endif
  */
 void MainWindow::onColorButtonColorClicked(const QColor &selectedColor, bool clicked)
 {
@@ -896,17 +719,9 @@ void MainWindow::onColorButtonColorClicked(const QColor &selectedColor, bool cli
 }
 
 /**
- * \if ENGLISH
  * @brief Handle Ribbon theme combobox current index changed
  * @param themeIndex The index of the selected theme
  * @details Switch Ribbon interface theme.
- * \endif
- *
- * \if CHINESE
- * @brief 处理Ribbon主题组合框当前索引改变
- * @param themeIndex 选择的主题索引
- * @details 切换Ribbon界面主题。
- * \endif
  */
 void MainWindow::onRibbonThemeComboBoxCurrentIndexChanged(int themeIndex)
 {
@@ -915,17 +730,9 @@ void MainWindow::onRibbonThemeComboBoxCurrentIndexChanged(int themeIndex)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle hide action trigger
  * @param hideActions Whether to hide the actions
  * @details Batch control the visibility of a group of actions.
- * \endif
- *
- * \if CHINESE
- * @brief 处理隐藏动作触发
- * @param hideActions 是否隐藏动作
- * @details 批量控制一组动作的可见性。
- * \endif
  */
 void MainWindow::onActionHideActionTriggered(bool hideActions)
 {
@@ -943,17 +750,9 @@ void MainWindow::onActionHideActionTriggered(bool hideActions)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle visible all action trigger
  * @param visibleAll Whether to make all actions visible
  * @details Control the visibility of all actions registered to the action manager.
- * \endif
- *
- * \if CHINESE
- * @brief 处理全部可见动作触发
- * @param visibleAll 是否全部可见
- * @details 控制所有注册到动作管理器的动作的可见性。
- * \endif
  */
 void MainWindow::onActionVisibleAllTriggered(bool visibleAll)
 {
@@ -969,17 +768,9 @@ void MainWindow::onActionVisibleAllTriggered(bool visibleAll)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle alignment center checkbox clicked
  * @param centerAligned Whether to center align
  * @details Control whether Ribbon toolbar content is center aligned.
- * \endif
- *
- * \if CHINESE
- * @brief 处理居中对齐复选框点击
- * @param centerAligned 是否居中对齐
- * @details 控制Ribbon工具栏内容是否居中对齐。
- * \endif
  */
 void MainWindow::onCheckBoxAlignmentCenterClicked(bool centerAligned)
 {
@@ -994,17 +785,9 @@ void MainWindow::onCheckBoxAlignmentCenterClicked(bool centerAligned)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle Ribbon title height spinbox value changed
  * @param newHeight The new title bar height
  * @details Adjust Ribbon title bar height.
- * \endif
- *
- * \if CHINESE
- * @brief 处理Ribbon标题高度数值框值改变
- * @param newHeight 新的标题栏高度
- * @details 调整Ribbon标题栏高度。
- * \endif
  */
 void MainWindow::onSpinBoxRibbonTitleHeightChanged(int newHeight)
 {
@@ -1012,17 +795,9 @@ void MainWindow::onSpinBoxRibbonTitleHeightChanged(int newHeight)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle Ribbon tab height spinbox value changed
  * @param newHeight The new tab bar height
  * @details Adjust Ribbon tab bar height.
- * \endif
- *
- * \if CHINESE
- * @brief 处理Ribbon标签高度数值框值改变
- * @param newHeight 新的标签栏高度
- * @details 调整Ribbon标签栏高度。
- * \endif
  */
 void MainWindow::onSpinBoxRibbonTabHeightChanged(int newHeight)
 {
@@ -1030,17 +805,9 @@ void MainWindow::onSpinBoxRibbonTabHeightChanged(int newHeight)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle Ribbon category height spinbox value changed
  * @param newHeight The new category area height
  * @details Adjust Ribbon category area height.
- * \endif
- *
- * \if CHINESE
- * @brief 处理Ribbon分类高度数值框值改变
- * @param newHeight 新的分类区域高度
- * @details 调整Ribbon分类区域高度。
- * \endif
  */
 void MainWindow::onSpinBoxRibbonCategoryHeightChanged(int newHeight)
 {
@@ -1048,17 +815,9 @@ void MainWindow::onSpinBoxRibbonCategoryHeightChanged(int newHeight)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle Ribbon panel title height spinbox value changed
  * @param newHeight The new panel title height
  * @details Adjust Ribbon panel title height.
- * \endif
- *
- * \if CHINESE
- * @brief 处理Ribbon面板标题高度数值框值改变
- * @param newHeight 新的面板标题高度
- * @details 调整Ribbon面板标题高度。
- * \endif
  */
 void MainWindow::onSpinBoxRibbonPanelTtitleHeightChanged(int newHeight)
 {
@@ -1066,17 +825,9 @@ void MainWindow::onSpinBoxRibbonPanelTtitleHeightChanged(int newHeight)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle Ribbon panel spacing spinbox value changed
  * @param newSpacing The new spacing between panels
  * @details Adjust the spacing between Ribbon panels.
- * \endif
- *
- * \if CHINESE
- * @brief 处理Ribbon面板间距数值框值改变
- * @param newSpacing 新的面板间距
- * @details 调整Ribbon面板之间的间距。
- * \endif
  */
 void MainWindow::onSpinBoxRibbonPanelSpacingChanged(int newSpacing)
 {
@@ -1084,17 +835,9 @@ void MainWindow::onSpinBoxRibbonPanelSpacingChanged(int newSpacing)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle panel small icon size spinbox value changed
  * @param newSize The new small icon size
  * @details Adjust the icon size of small tool buttons in Ribbon panels.
- * \endif
- *
- * \if CHINESE
- * @brief 处理面板小图标大小数值框值改变
- * @param newSize 新的小图标大小
- * @details 调整Ribbon面板中工具按钮的小图标大小。
- * \endif
  */
 void MainWindow::onSpinBoxPanelSmallIconSizeChanged(int newSize)
 {
@@ -1103,17 +846,9 @@ void MainWindow::onSpinBoxPanelSmallIconSizeChanged(int newSize)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle panel large icon size spinbox value changed
  * @param newSize The new large icon size
  * @details Adjust the icon size of large tool buttons in Ribbon panels.
- * \endif
- *
- * \if CHINESE
- * @brief 处理面板大图标大小数值框值改变
- * @param newSize 新的大图标大小
- * @details 调整Ribbon面板中工具按钮的大图标大小。
- * \endif
  */
 void MainWindow::onSpinBoxPanelLargeIconSizeChanged(int newSize)
 {
@@ -1122,17 +857,9 @@ void MainWindow::onSpinBoxPanelLargeIconSizeChanged(int newSize)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle tool button maximum aspect ratio spinbox value changed
  * @param newRatio The new maximum aspect ratio
  * @details Adjust the maximum aspect ratio of tool buttons.
- * \endif
- *
- * \if CHINESE
- * @brief 处理工具按钮最大宽高比数值框值改变
- * @param newRatio 新的最大宽高比
- * @details 调整工具按钮的最大宽高比。
- * \endif
  */
 void MainWindow::onDoubleSpinBoxToolbuttonMaximumAspectRatioChanged(double newRatio)
 {
@@ -1140,15 +867,8 @@ void MainWindow::onDoubleSpinBoxToolbuttonMaximumAspectRatioChanged(double newRa
 }
 
 /**
- * \if ENGLISH
  * @brief Handle title background brush changed timeout
  * @details Periodically change the title bar background color to demonstrate dynamic effects.
- * \endif
- *
- * \if CHINESE
- * @brief 处理标题背景画刷改变超时
- * @details 周期性地改变标题栏背景颜色以演示动态效果。
- * \endif
  */
 void MainWindow::onTitleBackgroundBrushChangedTimeout()
 {
@@ -1168,15 +888,8 @@ void MainWindow::onTitleBackgroundBrushChangedTimeout()
 }
 
 /**
- * \if ENGLISH
  * @brief Handle changed title timeout
  * @details Timer slot function used to periodically change the title bar color.
- * \endif
- *
- * \if CHINESE
- * @brief 处理标题改变超时
- * @details 定时器槽函数，用于周期性地改变标题栏颜色。
- * \endif
  */
 void MainWindow::onChangedTitleTimeout()
 {
@@ -1202,16 +915,9 @@ void MainWindow::onChangedTitleTimeout()
 }
 
 /**
- * \if ENGLISH
  * @brief Create other actions
  * @details Create some actions that are not directly displayed in the Ribbon interface,
  *          but can be used through customization features.
- * \endif
- *
- * \if CHINESE
- * @brief 创建其他动作
- * @details 创建一些不在Ribbon界面中直接显示的动作，但可以通过自定义功能使用。
- * \endif
  */
 void MainWindow::createOtherActions()
 {
@@ -1224,17 +930,9 @@ void MainWindow::createOtherActions()
 }
 
 /**
- * \if ENGLISH
  * @brief Handle close event
  * @param closeEvent The close event
  * @details Ask user for confirmation before closing the window.
- * \endif
- *
- * \if CHINESE
- * @brief 处理关闭事件
- * @param closeEvent 关闭事件
- * @details 在窗口关闭前询问用户确认。
- * \endif
  */
 void MainWindow::closeEvent(QCloseEvent *closeEvent)
 {
@@ -1250,15 +948,8 @@ void MainWindow::closeEvent(QCloseEvent *closeEvent)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle save action trigger
  * @details Save action demonstration - shows how to handle save operations in Ribbon.
- * \endif
- *
- * \if CHINESE
- * @brief 处理保存动作触发
- * @details 保存动作演示 - 展示如何在Ribbon中处理保存操作。
- * \endif
  */
 void MainWindow::onSaveActionTriggered()
 {
@@ -1268,17 +959,9 @@ void MainWindow::onSaveActionTriggered()
 }
 
 /**
- * \if ENGLISH
  * @brief Handle hide ribbon action trigger
  * @param hide Whether to hide the ribbon
  * @details Toggle between minimum and normal ribbon mode.
- * \endif
- *
- * \if CHINESE
- * @brief 处理隐藏Ribbon动作触发
- * @param hide 是否隐藏Ribbon
- * @details 在最小模式和正常模式之间切换。
- * \endif
  */
 void MainWindow::onHideRibbonActionTriggered(bool hide)
 {
@@ -1286,17 +969,9 @@ void MainWindow::onHideRibbonActionTriggered(bool hide)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle show/hide button action trigger
  * @param show Whether to show the button
  * @details Show or hide the built-in minimum mode button.
- * \endif
- *
- * \if CHINESE
- * @brief 处理显示/隐藏按钮动作触发
- * @param show 是否显示按钮
- * @details 显示或隐藏内置的最小化模式按钮。
- * \endif
  */
 void MainWindow::onShowHideButtonActionTriggered(bool show)
 {
@@ -1304,17 +979,9 @@ void MainWindow::onShowHideButtonActionTriggered(bool show)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle show title icon action trigger
  * @param show Whether to show the title icon
  * @details Show or hide the title icon in the ribbon bar.
- * \endif
- *
- * \if CHINESE
- * @brief 处理显示标题图标动作触发
- * @param show 是否显示标题图标
- * @details 显示或隐藏Ribbon栏中的标题图标。
- * \endif
  */
 void MainWindow::onShowTitleIconActionTriggered(bool show)
 {
@@ -1322,17 +989,9 @@ void MainWindow::onShowTitleIconActionTriggered(bool show)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle application button expand action trigger
  * @param expand Whether to expand the application button
  * @details Set whether the Application Button occupies the title bar and tab bar.
- * \endif
- *
- * \if CHINESE
- * @brief 处理应用程序按钮展开动作触发
- * @param expand 是否展开应用程序按钮
- * @details 设置应用程序按钮是否占用标题栏和标签栏。
- * \endif
  */
 void MainWindow::onAppButtonExpandActionTriggered(bool expand)
 {
@@ -1340,17 +999,9 @@ void MainWindow::onAppButtonExpandActionTriggered(bool expand)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle show context action trigger
  * @param show Whether to show the context category
  * @details Show or hide the context category.
- * \endif
- *
- * \if CHINESE
- * @brief 处理显示上下文动作触发
- * @param show 是否显示上下文分类
- * @details 显示或隐藏上下文分类。
- * \endif
  */
 void MainWindow::onShowContextActionTriggered(bool show)
 {
@@ -1358,15 +1009,8 @@ void MainWindow::onShowContextActionTriggered(bool show)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle delete context action trigger
  * @details Delete the context category.
- * \endif
- *
- * \if CHINESE
- * @brief 处理删除上下文动作触发
- * @details 删除上下文分类。
- * \endif
  */
 void MainWindow::onDeleteContextActionTriggered()
 {
@@ -1382,15 +1026,8 @@ void MainWindow::onDeleteContextActionTriggered()
 }
 
 /**
- * \if ENGLISH
  * @brief Handle word wrap demo action trigger
  * @details Demonstrate text wrapping functionality.
- * \endif
- *
- * \if CHINESE
- * @brief 处理文字换行演示动作触发
- * @details 演示文字换行功能。
- * \endif
  */
 void MainWindow::onWordWrapDemoActionTriggered()
 {
@@ -1399,15 +1036,8 @@ void MainWindow::onWordWrapDemoActionTriggered()
 }
 
 /**
- * \if ENGLISH
  * @brief Handle word wrap with menu action trigger
  * @details Demonstrate text wrapping with menu functionality.
- * \endif
- *
- * \if CHINESE
- * @brief 处理带菜单的文字换行动作触发
- * @details 演示带菜单的文字换行功能。
- * \endif
  */
 void MainWindow::onWordWrapWithMenuActionTriggered()
 {
@@ -1416,19 +1046,10 @@ void MainWindow::onWordWrapWithMenuActionTriggered()
 }
 
 /**
- * \if ENGLISH
  * @brief Handle remove panel action trigger
  * @param category The category containing the panel
  * @param panel The panel to remove
  * @details Remove a panel from a category.
- * \endif
- *
- * \if CHINESE
- * @brief 处理移除面板动作触发
- * @param category 包含面板的分类
- * @param panel 要移除的面板
- * @details 从分类中移除面板。
- * \endif
  */
 void MainWindow::onRemovePanelActionTriggered(SARibbonCategory *category, SARibbonPanel *panel)
 {
@@ -1439,17 +1060,9 @@ void MainWindow::onRemovePanelActionTriggered(SARibbonCategory *category, SARibb
 }
 
 /**
- * \if ENGLISH
  * @brief Handle remove category action trigger
  * @param category The category to remove
  * @details Remove a category from the ribbon bar.
- * \endif
- *
- * \if CHINESE
- * @brief 处理移除分类动作触发
- * @param category 要移除的分类
- * @details 从Ribbon栏中移除分类。
- * \endif
  */
 void MainWindow::onRemoveCategoryActionTriggered(SARibbonCategory *category)
 {
@@ -1462,17 +1075,9 @@ void MainWindow::onRemoveCategoryActionTriggered(SARibbonCategory *category)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle insert panel at start action trigger
  * @param category The category to insert the panel into
  * @details Insert a new panel at the start position (index 0).
- * \endif
- *
- * \if CHINESE
- * @brief 处理在开头插入面板动作触发
- * @param category 要插入面板的分类
- * @details 在起始位置（索引0）插入新面板。
- * \endif
  */
 void MainWindow::onInsertPanelAtStartActionTriggered(SARibbonCategory *category)
 {
@@ -1489,17 +1094,9 @@ void MainWindow::onInsertPanelAtStartActionTriggered(SARibbonCategory *category)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle insert panel at end action trigger
  * @param category The category to insert the panel into
  * @details Insert a new panel at the end position.
- * \endif
- *
- * \if CHINESE
- * @brief 处理在末尾插入面板动作触发
- * @param category 要插入面板的分类
- * @details 在末尾位置插入新面板。
- * \endif
  */
 void MainWindow::onInsertPanelAtEndActionTriggered(SARibbonCategory *category)
 {
@@ -1516,17 +1113,9 @@ void MainWindow::onInsertPanelAtEndActionTriggered(SARibbonCategory *category)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle insert panel at negative one action trigger
  * @param category The category to insert the panel into
  * @details Insert a new panel at position -1 (which appends to the end).
- * \endif
- *
- * \if CHINESE
- * @brief 处理在-1位置插入面板动作触发
- * @param category 要插入面板的分类
- * @details 在-1位置插入新面板（相当于追加到末尾）。
- * \endif
  */
 void MainWindow::onInsertPanelAtNegativeOneActionTriggered(SARibbonCategory *category)
 {
@@ -1543,15 +1132,8 @@ void MainWindow::onInsertPanelAtNegativeOneActionTriggered(SARibbonCategory *cat
 }
 
 /**
- * \if ENGLISH
  * @brief Handle unlock action trigger
  * @details Unlock the disabled action.
- * \endif
- *
- * \if CHINESE
- * @brief 处理解锁动作触发
- * @details 解锁被禁用的动作。
- * \endif
  */
 void MainWindow::onUnlockActionTriggered()
 {
@@ -1560,17 +1142,9 @@ void MainWindow::onUnlockActionTriggered()
 }
 
 /**
- * \if ENGLISH
  * @brief Handle set text action toggled
  * @param checked Whether the action is checked
  * @details Toggle the text of the action between Chinese and English.
- * \endif
- *
- * \if CHINESE
- * @brief 处理设置文本动作切换
- * @param checked 动作是否被选中
- * @details 在中文和英文之间切换动作的文本。
- * \endif
  */
 void MainWindow::onSetTextActionToggled(bool checked)
 {
@@ -1585,17 +1159,9 @@ void MainWindow::onSetTextActionToggled(bool checked)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle show panel action toggled
  * @param checked Whether the action is checked
  * @details Toggle the visibility of the example panel.
- * \endif
- *
- * \if CHINESE
- * @brief 处理显示面板动作切换
- * @param checked 动作是否被选中
- * @details 切换示例面板的可见性。
- * \endif
  */
 void MainWindow::onShowPanelActionToggled(bool checked)
 {
@@ -1612,17 +1178,9 @@ void MainWindow::onShowPanelActionToggled(bool checked)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle hide action 2 trigger
  * @param checked Whether the action is checked
  * @details Toggle the visibility of action 2.
- * \endif
- *
- * \if CHINESE
- * @brief 处理隐藏动作2触发
- * @param checked 动作是否被选中
- * @details 切换动作2的可见性。
- * \endif
  */
 void MainWindow::onHideAction2Triggered(bool checked)
 {
@@ -1639,17 +1197,9 @@ void MainWindow::onHideAction2Triggered(bool checked)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle hide action 4 trigger
  * @param checked Whether the action is checked
  * @details Toggle the visibility of action 4.
- * \endif
- *
- * \if CHINESE
- * @brief 处理隐藏动作4触发
- * @param checked 动作是否被选中
- * @details 切换动作4的可见性。
- * \endif
  */
 void MainWindow::onHideAction4Triggered(bool checked)
 {
@@ -1666,17 +1216,9 @@ void MainWindow::onHideAction4Triggered(bool checked)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle delete this category action trigger
  * @param category The category to delete
  * @details Delete the specified category from the ribbon bar.
- * \endif
- *
- * \if CHINESE
- * @brief 处理删除此分类动作触发
- * @param category 要删除的分类
- * @details 从Ribbon栏中删除指定的分类。
- * \endif
  */
 void MainWindow::onDeleteThisCategoryActionTriggered(SARibbonCategory *category)
 {
@@ -1688,15 +1230,8 @@ void MainWindow::onDeleteThisCategoryActionTriggered(SARibbonCategory *category)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle undo action trigger
  * @details Undo operation demonstration.
- * \endif
- *
- * \if CHINESE
- * @brief 处理撤销动作触发
- * @details 撤销操作演示。
- * \endif
  */
 void MainWindow::onUndoActionTriggered()
 {
@@ -1704,15 +1239,8 @@ void MainWindow::onUndoActionTriggered()
 }
 
 /**
- * \if ENGLISH
  * @brief Handle redo action trigger
  * @details Redo operation demonstration.
- * \endif
- *
- * \if CHINESE
- * @brief 处理重做动作触发
- * @details 重做操作演示。
- * \endif
  */
 void MainWindow::onRedoActionTriggered()
 {
@@ -1720,15 +1248,8 @@ void MainWindow::onRedoActionTriggered()
 }
 
 /**
- * \if ENGLISH
  * @brief Handle search editor editing finished
  * @details Process the search text when editing is finished.
- * \endif
- *
- * \if CHINESE
- * @brief 处理搜索编辑器编辑完成
- * @details 当编辑完成时处理搜索文本。
- * \endif
  */
 void MainWindow::onSearchEditorEditingFinished()
 {
@@ -1736,15 +1257,8 @@ void MainWindow::onSearchEditorEditingFinished()
 }
 
 /**
- * \if ENGLISH
  * @brief Handle login action trigger
  * @details Login action demonstration.
- * \endif
- *
- * \if CHINESE
- * @brief 处理登录动作触发
- * @details 登录操作演示。
- * \endif
  */
 void MainWindow::onLoginActionTriggered()
 {
@@ -1752,17 +1266,9 @@ void MainWindow::onLoginActionTriggered()
 }
 
 /**
- * \if ENGLISH
  * @brief Handle add gallery item action trigger
  * @param galleryGroup The gallery group to add the item to
  * @details Add a new item to the specified gallery group.
- * \endif
- *
- * \if CHINESE
- * @brief 处理添加Gallery项动作触发
- * @param galleryGroup 要添加项的Gallery组
- * @details 向指定的Gallery组添加新项。
- * \endif
  */
 void MainWindow::onAddGalleryItemActionTriggered(SARibbonGalleryGroup *galleryGroup)
 {
@@ -1774,17 +1280,9 @@ void MainWindow::onAddGalleryItemActionTriggered(SARibbonGalleryGroup *galleryGr
 }
 
 /**
- * \if ENGLISH
  * @brief Handle change language action trigger
  * @param toEnglish Whether to change to English
  * @details Toggle between Chinese and English panel names.
- * \endif
- *
- * \if CHINESE
- * @brief 处理切换语言动作触发
- * @param toEnglish 是否切换到英文
- * @details 在中文和英文面板名称之间切换。
- * \endif
  */
 void MainWindow::onChangeLanguageActionTriggered(bool toEnglish)
 {
@@ -1806,17 +1304,9 @@ void MainWindow::onChangeLanguageActionTriggered(bool toEnglish)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle context category 1 action trigger
  * @param visible Whether to make the context category visible
  * @details Set the visibility of context category 1.
- * \endif
- *
- * \if CHINESE
- * @brief 处理上下文分类1动作触发
- * @param visible 是否使上下文分类可见
- * @details 设置上下文分类1的可见性。
- * \endif
  */
 void MainWindow::onContextCategory1ActionTriggered(bool visible)
 {
@@ -1824,17 +1314,9 @@ void MainWindow::onContextCategory1ActionTriggered(bool visible)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle context category 2 action trigger
  * @param visible Whether to make the context category visible
  * @details Set the visibility of context category 2.
- * \endif
- *
- * \if CHINESE
- * @brief 处理上下文分类2动作触发
- * @param visible 是否使上下文分类可见
- * @details 设置上下文分类2的可见性。
- * \endif
  */
 void MainWindow::onContextCategory2ActionTriggered(bool visible)
 {
@@ -1842,7 +1324,6 @@ void MainWindow::onContextCategory2ActionTriggered(bool visible)
 }
 
 /**
- * \if ENGLISH
  * @brief Create main category page content
  * @param categoryPage Main category page pointer
  * @details Build panels and controls for the main category page, demonstrating basic usage of Ribbon.
@@ -1851,18 +1332,6 @@ void MainWindow::onContextCategory2ActionTriggered(bool visible)
  *          - Set up keyboard shortcuts
  *          - Configure ribbon styles and themes
  *          - Add various widgets to panels
- * \endif
- *
- * \if CHINESE
- * @brief 创建主分类页面内容
- * @param categoryPage 主分类页面指针
- * @details 构建主分类页面的各个面板和控件，展示Ribbon的基本用法。
- *          此函数演示如何：
- *          - 创建具有不同按钮样式的面板
- *          - 设置键盘快捷键
- *          - 配置Ribbon样式和主题
- *          - 向面板添加各种控件
- * \endif
  */
 void MainWindow::createCategoryMain(SARibbonCategory *categoryPage)
 {
@@ -2126,7 +1595,6 @@ void MainWindow::createCategoryMain(SARibbonCategory *categoryPage)
 }
 
 /**
- * \if ENGLISH
  * @brief Create other category page content
  * @param categoryPage Other category page pointer
  * @details Build content for other category pages, demonstrating more Ribbon control usages.
@@ -2134,17 +1602,6 @@ void MainWindow::createCategoryMain(SARibbonCategory *categoryPage)
  *          - Create button groups
  *          - Use Gallery controls
  *          - Handle context categories
- * \endif
- *
- * \if CHINESE
- * @brief 创建其他分类页面内容
- * @param categoryPage 其他分类页面指针
- * @details 构建其他分类页面的内容，展示更多Ribbon控件的用法。
- *          此函数演示如何：
- *          - 创建按钮组
- *          - 使用Gallery控件
- *          - 处理上下文分类
- * \endif
  */
 void MainWindow::createCategoryOther(SARibbonCategory *categoryPage)
 {
@@ -2285,7 +1742,6 @@ void MainWindow::createCategoryOther(SARibbonCategory *categoryPage)
 }
 
 /**
- * \if ENGLISH
  * @brief Create delete category page content
  * @param categoryPage Delete category page pointer
  * @details Demonstrate how to dynamically create and delete Ribbon category pages.
@@ -2293,17 +1749,6 @@ void MainWindow::createCategoryOther(SARibbonCategory *categoryPage)
  *          - Remove panels from categories
  *          - Remove categories from the ribbon bar
  *          - Insert panels at specific positions
- * \endif
- *
- * \if CHINESE
- * @brief 创建删除分类页面内容
- * @param categoryPage 删除分类页面指针
- * @details 演示如何动态创建和删除Ribbon分类页面。
- *          此函数演示如何：
- *          - 从分类中移除面板
- *          - 从Ribbon栏中移除分类
- *          - 在特定位置插入面板
- * \endif
  */
 void MainWindow::createCategoryDelete(SARibbonCategory *categoryPage)
 {
@@ -2343,7 +1788,6 @@ void MainWindow::createCategoryDelete(SARibbonCategory *categoryPage)
 }
 
 /**
- * \if ENGLISH
  * @brief Create size category page content
  * @param categoryPage Size category page pointer
  * @details Build size adjustment page, demonstrating the use of font and size related controls.
@@ -2351,17 +1795,6 @@ void MainWindow::createCategoryDelete(SARibbonCategory *categoryPage)
  *          - Use font comboboxes in ribbon panels
  *          - Create button groups for font tools
  *          - Adjust font sizes dynamically
- * \endif
- *
- * \if CHINESE
- * @brief 创建尺寸分类页面内容
- * @param categoryPage 尺寸分类页面指针
- * @details 构建尺寸调整页面，展示字体和尺寸相关控件的使用。
- *          此函数演示如何：
- *          - 在Ribbon面板中使用字体组合框
- *          - 创建字体工具的按钮组
- *          - 动态调整字体大小
- * \endif
  */
 void MainWindow::createCategorySize(SARibbonCategory *categoryPage)
 {
@@ -2414,7 +1847,6 @@ void MainWindow::createCategorySize(SARibbonCategory *categoryPage)
 }
 
 /**
- * \if ENGLISH
  * @brief Create color category page content
  * @param categoryPage Color category page pointer
  * @details Build color-related page, demonstrating the use of color selection controls.
@@ -2422,17 +1854,6 @@ void MainWindow::createCategorySize(SARibbonCategory *categoryPage)
  *          - Use SARibbonColorToolButton for color selection
  *          - Configure different color button styles
  *          - Use SAColorPaletteGridWidget for color palettes
- * \endif
- *
- * \if CHINESE
- * @brief 创建颜色分类页面内容
- * @param categoryPage 颜色分类页面指针
- * @details 构建颜色相关页面，展示颜色选择控件的使用。
- *          此函数演示如何：
- *          - 使用SARibbonColorToolButton进行颜色选择
- *          - 配置不同的颜色按钮样式
- *          - 使用SAColorPaletteGridWidget显示颜色面板
- * \endif
  */
 void MainWindow::createCategoryColor(SARibbonCategory *categoryPage)
 {
@@ -2487,17 +1908,9 @@ void MainWindow::createCategoryColor(SARibbonCategory *categoryPage)
 }
 
 /**
- * \if ENGLISH
  * @brief Create context category 1
  * @details Create context-related category pages, which are usually displayed under specific conditions.
  *          Context categories are special tabs that appear when certain objects or modes are active.
- * \endif
- *
- * \if CHINESE
- * @brief 创建上下文分类1
- * @details 创建上下文相关的分类页面，这类页面通常在特定条件下才显示。
- *          上下文分类是当某些对象或模式处于活动状态时出现的特殊标签页。
- * \endif
  */
 void MainWindow::createContextCategory1()
 {
@@ -2512,15 +1925,8 @@ void MainWindow::createContextCategory1()
 }
 
 /**
- * \if ENGLISH
  * @brief Create context category 2
  * @details Create another context tag, demonstrating the management of multiple context tags.
- * \endif
- *
- * \if CHINESE
- * @brief 创建上下文分类2
- * @details 创建另一个上下文标签，演示多个上下文标签的管理。
- * \endif
  */
 void MainWindow::createContextCategory2()
 {
@@ -2531,7 +1937,6 @@ void MainWindow::createContextCategory2()
 }
 
 /**
- * \if ENGLISH
  * @brief Create first context category page content
  * @param categoryPage First context category page pointer
  * @details Build content for the first context category page, demonstrating the unique features of context pages.
@@ -2539,17 +1944,6 @@ void MainWindow::createContextCategory2()
  *          - Control action visibility
  *          - Enable/disable actions dynamically
  *          - Use keyboard shortcuts in context pages
- * \endif
- *
- * \if CHINESE
- * @brief 创建第一个上下文分类页面内容
- * @param categoryPage 第一个上下文分类页面指针
- * @details 构建第一个上下文分类页面的内容，演示上下文页面的特有功能。
- *          此函数演示如何：
- *          - 控制动作可见性
- *          - 动态启用/禁用动作
- *          - 在上下文页面中使用键盘快捷键
- * \endif
  */
 void MainWindow::createContextCategoryPage1(SARibbonCategory *categoryPage)
 {
@@ -2642,7 +2036,6 @@ void MainWindow::createContextCategoryPage1(SARibbonCategory *categoryPage)
 }
 
 /**
- * \if ENGLISH
  * @brief Create second context category page content
  * @param categoryPage Second context category page pointer
  * @details Build content for the second context category page, demonstrating special layouts and control combinations.
@@ -2650,17 +2043,6 @@ void MainWindow::createContextCategoryPage1(SARibbonCategory *categoryPage)
  *          - Delete categories dynamically
  *          - Create custom panel layouts with different item sizes
  *          - Use separators in panels
- * \endif
- *
- * \if CHINESE
- * @brief 创建第二个上下文分类页面内容
- * @param categoryPage 第二个上下文分类页面指针
- * @details 构建第二个上下文分类页面的内容，展示特殊布局和控件组合。
- *          此函数演示如何：
- *          - 动态删除分类
- *          - 创建具有不同项目大小的自定义面板布局
- *          - 在面板中使用分隔符
- * \endif
  */
 void MainWindow::createContextCategoryPage2(SARibbonCategory *categoryPage)
 {
@@ -2726,18 +2108,10 @@ void MainWindow::createContextCategoryPage2(SARibbonCategory *categoryPage)
 }
 
 /**
- * \if ENGLISH
  * @brief Create quick access toolbar
  * @details Build quick access toolbar, placing commonly used operation buttons.
  *          The quick access toolbar is located at the top of the ribbon bar and provides
  *          quick access to frequently used commands.
- * \endif
- *
- * \if CHINESE
- * @brief 创建快速访问工具栏
- * @details 构建快速访问工具栏，放置常用的操作按钮。
- *          快速访问工具栏位于Ribbon栏的顶部，提供对常用命令的快速访问。
- * \endif
  */
 void MainWindow::createQuickAccessBar()
 {
@@ -2797,17 +2171,9 @@ void MainWindow::createQuickAccessBar()
 }
 
 /**
- * \if ENGLISH
  * @brief Create right button group
  * @details RightButtonGroup is a toolbar on the right side of the ribbonbar where you can place some shortcut icons.
  *          This is useful for placing help buttons, settings, and other frequently accessed commands.
- * \endif
- *
- * \if CHINESE
- * @brief 创建右侧按钮组
- * @details RightButtonGroup是在Ribbon栏右边的工具栏，可以放置一些快捷图标。
- *          这对于放置帮助按钮、设置和其他经常访问的命令非常有用。
- * \endif
  */
 void MainWindow::createRightButtonGroup()
 {
@@ -2828,17 +2194,9 @@ void MainWindow::createRightButtonGroup()
 }
 
 /**
- * \if ENGLISH
  * @brief Create window button group bar
  * @details Add custom tool buttons next to system window buttons (minimize, maximize, close).
  *          This allows you to add custom buttons to the title bar area.
- * \endif
- *
- * \if CHINESE
- * @brief 创建窗口按钮组栏
- * @details 在系统窗口按钮（最小化、最大化、关闭）旁边添加自定义工具按钮。
- *          这允许您在标题栏区域添加自定义按钮。
- * \endif
  */
 void MainWindow::createWindowButtonGroupBar()
 {
@@ -2856,23 +2214,12 @@ void MainWindow::createWindowButtonGroupBar()
 }
 
 /**
- * \if ENGLISH
  * @brief Create ActionsManager
  * @details Create ActionsManager to manage actions and customize SARibbonBar.
  *          The ActionsManager is essential for:
  *          - Managing all actions in the application
  *          - Enabling ribbon customization features
  *          - Categorizing actions for the customize dialog
- * \endif
- *
- * \if CHINESE
- * @brief 创建动作管理器
- * @details 创建ActionsManager来管理动作并自定义SARibbonBar。
- *          ActionsManager对于以下功能至关重要：
- *          - 管理应用程序中的所有动作
- *          - 启用Ribbon自定义功能
- *          - 为自定义对话框分类动作
- * \endif
  */
 void MainWindow::createActionsManager()
 {
@@ -2901,7 +2248,6 @@ void MainWindow::createActionsManager()
 }
 
 /**
- * \if ENGLISH
  * @brief Create an action with text, icon, and object name
  * @param text Action text
  * @param iconPath Icon path
@@ -2909,17 +2255,6 @@ void MainWindow::createActionsManager()
  * @return Created action pointer
  * @details This is a helper function to create QAction objects with consistent settings.
  *          The object name is important for action management and customization.
- * \endif
- *
- * \if CHINESE
- * @brief 创建带有文本、图标和对象名称的动作
- * @param text 动作文本
- * @param iconPath 图标路径
- * @param objName 对象名称
- * @return 创建的动作指针
- * @details 这是一个辅助函数，用于创建具有一致设置的QAction对象。
- *          对象名称对于动作管理和自定义非常重要。
- * \endif
  */
 QAction *MainWindow::createAction(const QString &text, const QString &iconPath, const QString &objName)
 {
@@ -2931,21 +2266,11 @@ QAction *MainWindow::createAction(const QString &text, const QString &iconPath, 
 }
 
 /**
- * \if ENGLISH
  * @brief Create an action with text and icon (overloaded version)
  * @param text Action text
  * @param iconPath Icon path
  * @return Created action pointer
  * @details This overloaded version auto-generates an object name based on the text.
- * \endif
- *
- * \if CHINESE
- * @brief 创建带有文本和图标的动作（重载版本）
- * @param text 动作文本
- * @param iconPath 图标路径
- * @return 创建的动作指针
- * @details 此重载版本根据文本自动生成对象名称。
- * \endif
  */
 QAction *MainWindow::createAction(const QString &text, const QString &iconPath)
 {
@@ -2957,15 +2282,8 @@ QAction *MainWindow::createAction(const QString &text, const QString &iconPath)
 }
 
 /**
- * \if ENGLISH
  * @brief Test the checkable function in menu button popup mode
  * @param checked Whether the button is checked
- * \endif
- *
- * \if CHINESE
- * @brief 测试菜单按钮弹出模式下的可检查功能
- * @param checked 是否选中
- * \endif
  */
 void MainWindow::onMenuButtonPopupCheckableTest(bool checked)
 {
@@ -2973,15 +2291,8 @@ void MainWindow::onMenuButtonPopupCheckableTest(bool checked)
 }
 
 /**
- * \if ENGLISH
  * @brief Test the checkable function in instant popup mode
  * @param checked Whether the button is checked
- * \endif
- *
- * \if CHINESE
- * @brief 测试即时弹出模式下的可检查功能
- * @param checked 是否选中
- * \endif
  */
 void MainWindow::onInstantPopupCheckableTest(bool checked)
 {
@@ -2989,15 +2300,8 @@ void MainWindow::onInstantPopupCheckableTest(bool checked)
 }
 
 /**
- * \if ENGLISH
  * @brief Test the checkable function in delayed popup mode
  * @param checked Whether the button is checked
- * \endif
- *
- * \if CHINESE
- * @brief 测试延迟弹出模式下的可检查功能
- * @param checked 是否选中
- * \endif
  */
 void MainWindow::onDelayedPopupCheckableTest(bool checked)
 {
@@ -3005,15 +2309,8 @@ void MainWindow::onDelayedPopupCheckableTest(bool checked)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle trigger events for checkable actions in menu button popup mode
  * @param checked Whether the button is checked
- * \endif
- *
- * \if CHINESE
- * @brief 处理菜单按钮弹出模式下可检查动作的触发事件
- * @param checked 是否选中
- * \endif
  */
 void MainWindow::onMenuButtonPopupCheckabletriggered(bool checked)
 {
@@ -3021,15 +2318,8 @@ void MainWindow::onMenuButtonPopupCheckabletriggered(bool checked)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle trigger events for checkable actions in instant popup mode
  * @param checked Whether the button is checked
- * \endif
- *
- * \if CHINESE
- * @brief 处理即时弹出模式下可检查动作的触发事件
- * @param checked 是否选中
- * \endif
  */
 void MainWindow::onInstantPopupCheckabletriggered(bool checked)
 {
@@ -3037,19 +2327,10 @@ void MainWindow::onInstantPopupCheckabletriggered(bool checked)
 }
 
 /**
- * \if ENGLISH
  * @brief Handle trigger events for checkable actions in delayed popup mode
  * @param checked Whether the button is checked
  * @details This also demonstrates how to use SARibbonToolButton::setPopupMode(QToolButton::DelayedPopup)
  *          to set the menu pop-up method to delayed pop-up.
- * \endif
- *
- * \if CHINESE
- * @brief 处理延迟弹出模式下可检查动作的触发事件
- * @param checked 是否选中
- * @details 这也演示了如何使用SARibbonToolButton::setPopupMode(QToolButton::DelayedPopup)
- *          方法设置菜单弹出方式为延迟弹出。
- * \endif
  */
 void MainWindow::onDelayedPopupCheckabletriggered(bool checked)
 {
