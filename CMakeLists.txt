@@ -54,7 +54,12 @@ qt_add_executable(MyPdfApp
     ApplicationWidget.cpp
     main.cpp
     resouce.qrc
+    pdfviewer.h
+    pdfviewer.cpp
 )
+
+# For Windows, if a console is needed to see debug output, set WIN32_EXECUTABLE to OFF
+set_target_properties(MyPdfApp PROPERTIES WIN32_EXECUTABLE OFF)
 
 target_link_libraries(MyPdfApp PRIVATE podofo::podofo_shared
     pdfium
